@@ -1,16 +1,11 @@
 def CFS():
-    arg1 = int(raw_input('What do you want factored?'))
+    arga = int(raw_input('What do you want factored?'))
+    if arga < 0:
+        arg1 = arga * -1
     arg2 = arg1
-    if arg1 < 0:
-        arg1 = arg1 * -1
-    elif arg2 < 0:
-        arg2 = arg2 * -1
     CF = []
     l = 1
-    if arg1 > arg2:
-        g = arg2
-    elif arg2 >= arg1:
-        g = arg1
+    g = arg1
     for item in range(g):
         if arg1 % l == 0 and arg2 % l == 0:
             CF.append(l)
@@ -37,10 +32,10 @@ def CFS():
         v += 1
     if Want < 0:
         Want = Want * -1
-        if arg1 > 0 and Want not in CFDD:
-            print 'You\'ll need to change both of the to negative.'
+        if arga > 0 and Want not in CFDD:
+            print 'You\'ll need to change both of the signs to negative.'
         else:
-            print 'You\'ll need to change one of the signs to negative.'
+            print 'You\'ll need to change the smaller number\'s sign to negative.'
     if Want in CFDD:
         print CFDD[Want]
         print 'Diff'
